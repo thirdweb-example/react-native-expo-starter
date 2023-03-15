@@ -1,20 +1,49 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * Generated with the TypeScript template
+ * https://github.com/react-native-community/react-native-template-typescript
+ *
+ * @format
+ */
 
-export default function App() {
+import { ConnectWallet, ThirdwebProvider } from "@thirdweb-dev/react-native";
+import React from "react";
+import { SafeAreaView, StyleSheet, useColorScheme, View } from "react-native";
+import { Colors } from "react-native/Libraries/NewAppScreen";
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThirdwebProvider activeChain={"mumbai"}>
+      <AppInner />
+    </ThirdwebProvider>
   );
-}
+};
+
+const AppInner = () => {
+  const isDarkMode = useColorScheme() === "dark";
+  const backgroundStyle = {
+    backgroundColor: Colors.lighter,
+  };
+
+  return (
+    <SafeAreaView style={backgroundStyle}>
+      <View style={styles.view}>
+        <ConnectWallet />
+      </View>
+    </SafeAreaView>
+  );
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  view: {
+    height: "100%",
+    display: "flex",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    alignContent: "center",
   },
 });
+
+export default App;
