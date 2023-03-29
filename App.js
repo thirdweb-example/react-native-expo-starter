@@ -8,14 +8,14 @@
  * @format
  */
 
-import { ConnectWallet, ThirdwebProvider } from "@thirdweb-dev/react-native";
+import { coinbaseWallet, ConnectWallet, metamaskWallet, rainbowWallet, ThirdwebProvider } from "@thirdweb-dev/react-native";
 import React from "react";
 import { SafeAreaView, StyleSheet, useColorScheme, View } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 
 const App = () => {
   return (
-    <ThirdwebProvider activeChain={"mumbai"}>
+    <ThirdwebProvider activeChain={"mumbai"} supportedWallets={[metamaskWallet(), rainbowWallet()]}>
       <AppInner />
     </ThirdwebProvider>
   );
