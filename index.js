@@ -1,4 +1,3 @@
-// Import polyfills
 import "@thirdweb-dev/react-native-compat";
 
 import { registerRootComponent } from "expo";
