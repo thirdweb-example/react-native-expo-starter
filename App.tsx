@@ -8,10 +8,12 @@ import {
 import React from "react";
 import { StyleSheet, Text, useColorScheme, View } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
+import { TW_CLIENT_ID } from "@env";
 
 const App = () => {
   return (
     <ThirdwebProvider
+      clientId={TW_CLIENT_ID}
       activeChain="mumbai"
       supportedWallets={[metamaskWallet(), rainbowWallet(), localWallet()]}
     >

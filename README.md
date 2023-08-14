@@ -1,28 +1,54 @@
-# React Native + thirdweb + Expo Starter Template
+# React Native + thirdweb + TypeScript Starter Template
 
-## 👷🚧 Alpha 🚧👷
-
-This template is in alpha right now. We're working on improving it and adding more features. If you have any feedback, please let us know!
-
-Got questions? Jump into our [Discord](https://discord.com/invite/thirdweb) to speak with us directly.
+Got questions? Jump into our [Discord](https://discord.gg/thirdweb) to speak with us directly.
 
 ## Getting Started
 
 Create a project using this example:
 
 ```bash
-npx thirdweb create --template react-native-expo-starter
+npx thirdweb create --template react-native-typescript-starter
 ```
 
-You can start editing the page by modifying `App.js`. The page auto-updates as you edit the file.
+Install dependencies:
+
+```bash
+yarn install # or npm install
+```
+
+If you are developing on iOS, you will need to install the pods:
+
+```bash
+cd ios && pod install
+```
+
+## Get a clientId
+
+You can [get your clientId](https://thirdweb.com/dashboard/settings/api-keys) from our Dashboard and set it in the `.env` file.
+
+Please, make sure to add your app's `bundleId` in the Allowed Bundle IDs list. Here's more info on [how to get your app's bundleId](https://portal.thirdweb.com/api-keys#how-to-get-my-bundleid)
+
+## Running the app
+
+Android:
+
+```
+yarn android
+```
+
+iOS:
+
+```
+yarn ios
+```
 
 ## Learn More
 
 To learn more about thirdweb and React Native, take a look at the following resources:
 
 - [thirdweb Portal](https://portal.thirdweb.com) - check our guides and development resources.
-- [thirdweb React Native SDK](https://portal.thirdweb.com/react-native) - check our guides and development resources.
-- [React Native Documentation](https://reactnative.dev/) - learn about Next.js features and API.
+- [thirdweb SDK](https://portal.thirdweb.com/sdk) - check our guides and development resources.
+- [React Native Documentation](https://reactnative.dev/) - learn about React Native features and API.
 
 You can check out [the thirdweb GitHub organization](https://github.com/thirdweb-dev) - your feedback and contributions are welcome!
 
