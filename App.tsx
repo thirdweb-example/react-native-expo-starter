@@ -13,7 +13,7 @@ import { TW_CLIENT_ID } from "@env";
 const App = () => {
   return (
     <ThirdwebProvider
-      clientId={TW_CLIENT_ID}
+      // clientId={TW_CLIENT_ID} // uncomment this line after you set your clientId in the .env file
       activeChain="mumbai"
       supportedWallets={[metamaskWallet(), rainbowWallet(), localWallet()]}
     >
