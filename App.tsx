@@ -1,9 +1,12 @@
 import {
   ConnectWallet,
+  embeddedWallet,
   localWallet,
   metamaskWallet,
   rainbowWallet,
   ThirdwebProvider,
+  trustWallet,
+  walletConnect,
 } from "@thirdweb-dev/react-native";
 import React from "react";
 import { StyleSheet, Text, useColorScheme, View } from "react-native";
@@ -13,9 +16,29 @@ import { TW_CLIENT_ID } from "@env";
 const App = () => {
   return (
     <ThirdwebProvider
-      // clientId={TW_CLIENT_ID} // uncomment this line after you set your clientId in the .env file
       activeChain="mumbai"
-      supportedWallets={[metamaskWallet(), rainbowWallet(), localWallet()]}
+      clientId={TW_CLIENT_ID}
+      supportedWallets={[
+        metamaskWallet({
+          recommended: true,
+        }),
+        rainbowWallet(),
+        walletConnect({
+          recommended: true,
+        }),
+        embeddedWallet({
+          auth: {
+            // you need to enable EmbeddedWallets under your API Key in your thirdweb dashboard:
+            // https://thirdweb.com/dashboard/settings/api-keys
+            options: ["email", "google"],
+            // you need to add this deeplink in your allowed `Redirect URIs` under your API Key in your thirdweb dashboard:
+            // https://thirdweb.com/dashboard/settings/api-keys
+            redirectUrl: "rnstarter://",
+          },
+        }),
+        trustWallet(),
+        localWallet(),
+      ]}
     >
       <AppInner />
     </ThirdwebProvider>
