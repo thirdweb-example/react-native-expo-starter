@@ -1,4 +1,4 @@
-# React Native + thirdweb + TypeScript Starter Template
+# React Native + Expo + thirdweb + TypeScript Starter Template
 
 Got questions? Jump into our [Discord](https://discord.gg/thirdweb) to speak with us directly.
 
@@ -7,7 +7,7 @@ Got questions? Jump into our [Discord](https://discord.gg/thirdweb) to speak wit
 Create a project using this example:
 
 ```bash
-npx thirdweb create --template react-native-typescript-starter
+npx thirdweb create --template react-native-expo-starter
 ```
 
 Install dependencies:
