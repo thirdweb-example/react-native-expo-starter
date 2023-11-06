@@ -18,6 +18,7 @@ web-build/
 
 /coverage
 
+.env
 .env.local
 
 /.yalc

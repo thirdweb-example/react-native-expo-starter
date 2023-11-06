@@ -11,13 +11,12 @@ import {
 import React from "react";
 import { StyleSheet, Text, useColorScheme, View } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
-import { TW_CLIENT_ID } from "@env";
 
 const App = () => {
   return (
     <ThirdwebProvider
       activeChain="mumbai"
-      clientId={TW_CLIENT_ID}
+      clientId={process.env.EXPO_PUBLIC_TW_CLIENT_ID}
       supportedWallets={[
         metamaskWallet({
           recommended: true,
